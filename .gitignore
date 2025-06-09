@@ -2,3 +2,4 @@ lib/libeasytier_ffi.dylib
 .vscode
 app.yaml
 .DS_Store
+easytier-ffi-go
