@@ -8,16 +8,16 @@ import (
 )
 
 type KeyValuePair struct {
-	Key   *byte
-	Value *byte
+	Key   uintptr
+	Value uintptr
 }
 
 var (
-	GetErrorMsg           func(*byte)
-	FreeString            func(*byte)
-	ParseConfig           func(*byte) int32
-	RunNetworkInstance    func(*byte) int32
-	RetainNetworkInstance func(*byte, uintptr) int32
+	GetErrorMsg           func(uintptr)
+	FreeString            func(uintptr)
+	ParseConfig           func(uintptr) int32
+	RunNetworkInstance    func(uintptr) int32
+	RetainNetworkInstance func(uintptr, uintptr) int32
 	CollectNetworkInfos   func(*KeyValuePair, uintptr) int32
 )
 

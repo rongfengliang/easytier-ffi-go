@@ -7,6 +7,11 @@ func CString(s string) ([]byte, *byte) {
 	return b, &b[0]
 }
 
+func CStringPtr(s string) uintptr {
+	b := append([]byte(s), 0)
+	return uintptr(unsafe.Pointer(&b[0]))
+}
+
 func CStrToGoStr(cstr *byte) string {
 	return unsafe.String(cstr, strlen(cstr))
 }

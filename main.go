@@ -14,7 +14,7 @@ func main() {
 		panic(err)
 	}
 	content := string(data)
-	_, cstr := easytierffigo.CString(content)
+	cstr := easytierffigo.CStringPtr(content)
 	result := easytierffigo.ParseConfig(cstr)
 	fmt.Println("ParseConfig result", result)
 	if result != 0 {
